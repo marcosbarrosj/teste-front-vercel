@@ -1,6 +1,7 @@
-import { BASE_URL } from '../../config/config';
+import { BASE_URL } from './config.js';
 
-async function cadastrar() {
+// Função principal
+export async function cadastrar() {
     const nome = document.getElementById('nome').value;
     const email = document.getElementById('email').value;
     const mensagem = document.getElementById('mensagem');
@@ -15,6 +16,7 @@ async function cadastrar() {
         });
 
         const data = await resposta.json();
+        
         if (resposta.ok) {
             mensagem.innerText = 'Usuário cadastrado com sucesso!';
             mensagem.style.color = 'green';
@@ -29,5 +31,5 @@ async function cadastrar() {
     }
 }
 
-// Exporte a função para que possa ser acessada globalmente
+// Tornando a função disponível globalmente
 window.cadastrar = cadastrar;
