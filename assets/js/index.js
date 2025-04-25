@@ -1,4 +1,4 @@
-const { BASE_URL } = require('../../config/config');
+import { BASE_URL } from '../../config/config';
 
 async function cadastrar() {
     const nome = document.getElementById('nome').value;
