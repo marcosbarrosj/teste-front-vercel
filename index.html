@@ -41,11 +41,12 @@
       const mensagem = document.getElementById('mensagem');
 
       try {
-        const resposta = await fetch('https://SEU_PROJETO.vercel.app/cadastro', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ nome, email })
-        });
+        const resposta = await fetch('https://api-vercel-teste-nu.vercel.app/cadastro', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ nome, email })
+});
+
 
         const data = await resposta.json();
         if (resposta.ok) {
