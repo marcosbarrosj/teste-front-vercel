@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cadastro de Usuário</title>
+
+  
   <style>
     body {
       font-family: sans-serif;
@@ -35,16 +37,21 @@
   </div>
 
   <script>
+    // No arquivo de uso
+const { BASE_URL } = require('./config');
+
     async function cadastrar() {
       const nome = document.getElementById('nome').value;
       const email = document.getElementById('email').value;
       const mensagem = document.getElementById('mensagem');
 
       try {
-        const resposta = await fetch('https://api-vercel-teste-nu.vercel.app/cadastro', {
+        const resposta = await fetch(`${BASE_URL}/cadastro`, {
   method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ nome, email })
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ nome, email }),
 });
 
 
