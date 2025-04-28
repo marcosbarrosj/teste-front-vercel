@@ -7,7 +7,7 @@ export async function cadastrar() {
     const mensagem = document.getElementById('mensagem');
 
     try {
-        const resposta = await fetch(`${BASE_URL}/cadastro`, {
+        const resposta = await fetch(`${BASE_URL}/api/cadastro`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
